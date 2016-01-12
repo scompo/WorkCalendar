@@ -1,0 +1,17 @@
+# Eclipse files.
+
+.classpath
+.project
+.settings
+
+# Maven target.
+
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+
+# Others.
+
+*~
