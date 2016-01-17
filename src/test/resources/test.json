@@ -1,0 +1,6 @@
+{
+	"rootLevelData" : "root level data",
+	"firstLevel" : {
+		"firstLevelData" : "first level data"
+	}
+}

@@ -8,7 +8,7 @@ public class WebController {
 
 	public static final String INDEX_TEMPLATE_NAME = "index";
 
-	@RequestMapping
+	@RequestMapping("/")
 	public String index() {
 
 		return INDEX_TEMPLATE_NAME;
