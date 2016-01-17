@@ -5,8 +5,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<p>Nothing to see yet...</p>
-	<a th:href="@{googleLogin}">google login</a>
-	<a th:href="@{stuff}">do stuff!</a>
+	<div id="loggedUserDiv">
+		<table>
+			<tr>
+				<td>username:</td>
+				<td><p>username</p></td>
+			</tr>
+		</table>
+	</div>
+	<div id="contentDiv">
+		<p>Calendars:</p>
+		<table>
+			<tr th:each="cal : ${calendarList.items}">
+				<td th:text="${cal.summary}">summary</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>start:</td>
+				<td><input type="text" id="eventName" /></td>
+			</tr>
+			<tr>
+				<td>start:</td>
+				<td><input type="text" id="startDay" /></td>
+				<td><input type="text" id="startHour" /></td>
+			</tr>
+			<tr>
+				<td>end:</td>
+				<td><input type="text" id="endDay" /></td>
+				<td><input type="text" id="endHour" /></td>
+			</tr>
+		</table>
+	</div>
+
 </body>
 </html>
