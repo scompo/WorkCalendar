@@ -28,6 +28,9 @@ import com.github.scompo.workcalendar.services.google.GoogleTokenServices;
 public class OAuthConfig {
 
 	@Autowired
+	private CallBackUri callbackUri;
+	
+	@Autowired
 	private JsonLoader jsonLoader;
 
 	@Autowired
@@ -81,12 +84,11 @@ public class OAuthConfig {
 		authorizationCodeResourceDetails.setTokenName("access_token");
 		authorizationCodeResourceDetails.setScope(Arrays
 				.asList(new String[] { "https://www.googleapis.com/auth/calendar" }));
-		authorizationCodeResourceDetails.setPreEstablishedRedirectUri("http://localhost:8080/oauth2Callback");
+		authorizationCodeResourceDetails.setPreEstablishedRedirectUri(callbackUri.getCallbackUri() + "oauth2Callback");
 		authorizationCodeResourceDetails.setUseCurrentUri(false);
 		authorizationCodeResourceDetails.setAuthenticationScheme(AuthenticationScheme.query);
 		authorizationCodeResourceDetails.setClientAuthenticationScheme(AuthenticationScheme.query);
 
 		return authorizationCodeResourceDetails;
 	}
-
 }
